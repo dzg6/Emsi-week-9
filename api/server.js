@@ -44,6 +44,7 @@ router.get('/', (req, res) => {
 
 // Create an account
 router.post('/accounts', (req, res) => {
+
   // Check mandatory request parameters
   if (!req.body.user || !req.body.currency) {
     return res.status(400).json({ error: 'Missing parameters' });
