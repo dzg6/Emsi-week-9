@@ -1,0 +1,33 @@
+body {
+    background-color: #b5ffc2;
+    color: #008aa1;
+}
+button{
+   background-color: #ffe600;
+   color: #651300;
+   width: 10em;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto auto;
+
+}
+h1 {
+    text-align: center;
+}
+#wrapper{
+    width:100%;
+    margin: auto auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input, textarea, select, label{
+    width: 40%
+}

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./index.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Bank App</h1>
+            <form id="createUser">
+                <label>User:
+                <input type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" />
+            </label>
+                <label>Currency:</label>
+                <select name="currency">
+                    <options name="$" value="$"> $ </options>
+                    <options name="€" value="€"> € </options>
+                </select>
+                <label>Description:</label>
+                <textarea name="description"></textarea>
+                <label>Balance:</label>
+                <input type="number" name="balance" min="50" step="any" />
+                <button type="submit" name="submitUser">Submit</button>
+            </form> 
+
+            <form id="createTransactions">
+                <label>User:</label>
+                <input type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" />
+                <!-- Update this date Picker for stretch goal -->
+                <label>Date:</label>
+                <input type="datetime-local" name="date" />
+                <label>Object:</label>
+                <input type="text" name="object" pattern="(.|\s)*\S(.|\s)*"/>
+                <label>Amount:</label>
+                <input type="number" name="amount" min=".01" step="any"  />
+                <button type="submit" name="submitTransactions">Submit</button>
+            </form> 
+
+        </div>
+    </body>
+</html>
