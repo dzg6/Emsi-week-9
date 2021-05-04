@@ -8,40 +8,59 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.3.0/dist/duet/duet.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.3.0/dist/duet/duet.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.3.0/dist/duet/themes/default.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <div id="wrapper">
         <h1>Bank App</h1>
-        <form id="createUser">
-            <label>User:
-                <input type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" />
-            </label>
-            <label>Currency:</label>
-            <select name="currency">
-                <option name="$" value="$"> $ </option>
-                <option name="€" value="€"> € </option>
-            </select>
-            <label>Description:</label>
-            <textarea name="description"></textarea>
-            <label>Balance:</label>
-            <input type="number" name="balance" min="50" step="any" />
-            <button type="submit" name="submit">Submit</button>
-        </form>
-
-        <form id="transaction">
-            <label>User:</label>
-            <input type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" />
-            <!-- Update this date Picker for stretch goal -->
-            <label for="date">Choose a date</label>
-            <duet-date-picker id='datePicker' identifier="date" name='date' ></duet-date-picker>
-            <label>Object:</label>
-            <input type="text" name="object" pattern="(.|\s)*\S(.|\s)*" />
-            <label>Amount:</label>
-            <input type="number" name="amount" min=".01" step="any" />
-            <button type="submit" name="submitTransactions">Submit</button>
-        </form>
+        <div>
+            <form id="createUser">
+                <div>
+                    <label>User:</label>
+                    <input type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" required />
+                </div>
+                <div>
+                    <label>Currency:</label>
+                    <select name="currency" required>
+                        <option name="$" value="$"> $ </option>
+                        <option name="€" value="€"> € </option>
+                    </select>
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <textarea name="description" pattern="(.|\s)*\S(.|\s)*" required></textarea>
+                </div>
+                <div><label>Balance:</label>
+                    <input type="number" name="balance" min="50" step="any" required />
+                </div>
+                <button type="submit" name="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            <form id="transaction">
+                <div>
+                    <label>User:</label>
+                    <input list="allUsers" type="text" name="user" minlength="8" pattern="(.|\s)*\S(.|\s)*" required />
+                    <datalist id="allUsers">
+                    </datalist>
+                </div>
+                <div>
+                    <label for="date">Date:</label>
+                    <duet-date-picker id='datePicker' identifier="date" name='date' required></duet-date-picker>
+                </div>
+                <div><label>Object:</label>
+                    <input type="text" name="object" pattern="(.|\s)*\S(.|\s)*" required />
+                </div>
+                <div><label>Amount:</label>
+                    <input type="number" name="amount" min=".01" step="any" required />
+                </div>
+                <button type="submit" name="submitTransactions">Submit</button>
+            </form>
+        </div>
 
     </div>
 </body>
